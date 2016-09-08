@@ -12,21 +12,21 @@ IP: 192.168.0.73
 - runs `raiden`
 - connects to blockchain via rpc
 
-IP: 192.168.0.101
+IP: 192.168.0.118
 
 ## supplier
 - rpi
 - runs `raiden`
 - connects to blockchain via rpc
 
-IP: 192.168.0.102
+IP: 192.168.0.139
 
 # Commands
 
     export CONFIG_DIR="/tmp/iot-config"
     export GETH="192.168.0.73"
     export GETH_DATADIR="/tmp/iot-demo"
-    export RAIDEN_NODES="192.168.0.101 192.168.0.102"
+    export RAIDEN_NODES="192.168.0.118 192.168.0.139"
     rm -rf $CONFIG_DIR
     mkdir -p $CONFIG_DIR/geth/keystore
 
