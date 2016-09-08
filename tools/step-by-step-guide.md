@@ -48,7 +48,7 @@ Now $CONFIG_DIR contains several files:
 - `geth`-directory: move this to your geth node to the folder $GETH_DATADIR
 - `geth/geth_commands.json` contains the command to start the geth node. Before you run this, you need to call:
 
-        - `geth --datadir $GETH_DATADIR init $GETH_DATADIR/genesis.json`
+    - `geth --datadir $GETH_DATADIR init $GETH_DATADIR/genesis.json`
 
     (make sure, you defined $GETH_DATADIR on the machine, or spell it out completely).
 
@@ -57,3 +57,14 @@ Now $CONFIG_DIR contains several files:
     - `--rpc_endpoint "192.168.0.73:8545"`
     - `raiden_flags` from `$CONFIG_DIR/geth/genesis.json:config['raidenFlags']`
     - `--privatekey` from  `$CONFIG_DIR/raiden_accounts.json`
+
+- To start over:
+
+    - on $GETH:
+        
+        cd $GETH_DATADIR
+        rm -rf chaindata
+        rm -rf dapp
+        geth --datadir $GETH_DATADIR init $GETH_DATADIR/genesis.json
+
+    and start geth again.
