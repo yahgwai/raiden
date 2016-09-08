@@ -156,6 +156,7 @@ def geth_commands(ctx, geth_hosts, datadir):
     for node in nodes:
         node.pop('unlock')
         node.pop('rpcport')
+        node['rpcaddr'] = '0.0.0.0'
     config = {'{host}'.format(**node): ' '.join(to_cmd(node, datadir=datadir)) for node in nodes}
     config['static_nodes'] = [node['enode'] for node in nodes]
     print json.dumps(config,

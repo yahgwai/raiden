@@ -32,6 +32,7 @@ DEFAULT_ARGS = [
 # 'node configuration'
 NODE_CONFIG = [
     'nodekeyhex',
+    'rpcaddr',
     'port',
     'rpcport',
     'bootnodes',
