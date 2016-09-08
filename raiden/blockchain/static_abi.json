@@ -1,0 +1,1796 @@
+{
+  "NETTING_CHANNEL_ABI": [
+    {
+      "inputs": [
+        {
+          "type": "bytes", 
+          "name": "lockedEncoded"
+        }, 
+        {
+          "type": "bytes", 
+          "name": "merkleProof"
+        }, 
+        {
+          "type": "bytes32", 
+          "name": "secret"
+        }
+      ], 
+      "constant": false, 
+      "type": "function", 
+      "name": "unlock", 
+      "outputs": []
+    }, 
+    {
+      "inputs": [
+        {
+          "type": "address", 
+          "name": "one_address"
+        }
+      ], 
+      "constant": true, 
+      "type": "function", 
+      "name": "partner", 
+      "outputs": [
+        {
+          "type": "address", 
+          "name": ""
+        }
+      ]
+    }, 
+    {
+      "inputs": [], 
+      "constant": false, 
+      "type": "function", 
+      "name": "settle", 
+      "outputs": []
+    }, 
+    {
+      "inputs": [], 
+      "constant": true, 
+      "type": "function", 
+      "name": "assetAddress", 
+      "outputs": [
+        {
+          "type": "address", 
+          "name": ""
+        }
+      ]
+    }, 
+    {
+      "inputs": [
+        {
+          "type": "bytes", 
+          "name": "signed_transfer"
+        }
+      ], 
+      "constant": false, 
+      "type": "function", 
+      "name": "updateTransfer", 
+      "outputs": []
+    }, 
+    {
+      "inputs": [], 
+      "constant": true, 
+      "type": "function", 
+      "name": "closingAddress", 
+      "outputs": [
+        {
+          "type": "address", 
+          "name": ""
+        }
+      ]
+    }, 
+    {
+      "inputs": [], 
+      "constant": true, 
+      "type": "function", 
+      "name": "closed", 
+      "outputs": [
+        {
+          "type": "uint256", 
+          "name": ""
+        }
+      ]
+    }, 
+    {
+      "inputs": [], 
+      "constant": true, 
+      "type": "function", 
+      "name": "opened", 
+      "outputs": [
+        {
+          "type": "uint256", 
+          "name": ""
+        }
+      ]
+    }, 
+    {
+      "inputs": [], 
+      "constant": true, 
+      "type": "function", 
+      "name": "addressAndBalance", 
+      "outputs": [
+        {
+          "type": "address", 
+          "name": "participant1"
+        }, 
+        {
+          "type": "uint256", 
+          "name": "balance1"
+        }, 
+        {
+          "type": "address", 
+          "name": "participant2"
+        }, 
+        {
+          "type": "uint256", 
+          "name": "balance2"
+        }
+      ]
+    }, 
+    {
+      "inputs": [], 
+      "constant": true, 
+      "type": "function", 
+      "name": "data", 
+      "outputs": [
+        {
+          "type": "uint256", 
+          "name": "settleTimeout"
+        }, 
+        {
+          "type": "uint256", 
+          "name": "opened"
+        }, 
+        {
+          "type": "uint256", 
+          "name": "closed"
+        }, 
+        {
+          "type": "uint256", 
+          "name": "settled"
+        }, 
+        {
+          "type": "address", 
+          "name": "closingAddress"
+        }, 
+        {
+          "type": "address", 
+          "name": "token"
+        }
+      ]
+    }, 
+    {
+      "inputs": [], 
+      "constant": true, 
+      "type": "function", 
+      "name": "settleTimeout", 
+      "outputs": [
+        {
+          "type": "uint256", 
+          "name": ""
+        }
+      ]
+    }, 
+    {
+      "inputs": [
+        {
+          "type": "bytes", 
+          "name": "signed_transfer"
+        }
+      ], 
+      "constant": false, 
+      "type": "function", 
+      "name": "closeSingleTransfer", 
+      "outputs": []
+    }, 
+    {
+      "inputs": [], 
+      "constant": true, 
+      "type": "function", 
+      "name": "settled", 
+      "outputs": [
+        {
+          "type": "uint256", 
+          "name": ""
+        }
+      ]
+    }, 
+    {
+      "inputs": [
+        {
+          "type": "uint256", 
+          "name": "amount"
+        }
+      ], 
+      "constant": false, 
+      "type": "function", 
+      "name": "deposit", 
+      "outputs": [
+        {
+          "type": "bool", 
+          "name": ""
+        }
+      ]
+    }, 
+    {
+      "inputs": [
+        {
+          "type": "bytes", 
+          "name": "firstEncoded"
+        }, 
+        {
+          "type": "bytes", 
+          "name": "secondEncoded"
+        }
+      ], 
+      "constant": false, 
+      "type": "function", 
+      "name": "close", 
+      "outputs": []
+    }, 
+    {
+      "inputs": [
+        {
+          "type": "address", 
+          "name": "assetAddress"
+        }, 
+        {
+          "type": "address", 
+          "name": "participant1"
+        }, 
+        {
+          "type": "address", 
+          "name": "participant2"
+        }, 
+        {
+          "type": "uint256", 
+          "name": "timeout"
+        }
+      ], 
+      "type": "constructor"
+    }, 
+    {
+      "inputs": [
+        {
+          "indexed": false, 
+          "type": "address", 
+          "name": "assetAddress"
+        }, 
+        {
+          "indexed": false, 
+          "type": "address", 
+          "name": "participant"
+        }, 
+        {
+          "indexed": false, 
+          "type": "uint256", 
+          "name": "balance"
+        }, 
+        {
+          "indexed": false, 
+          "type": "uint256", 
+          "name": "blockNumber"
+        }
+      ], 
+      "type": "event", 
+      "name": "ChannelNewBalance", 
+      "anonymous": false
+    }, 
+    {
+      "inputs": [
+        {
+          "indexed": false, 
+          "type": "address", 
+          "name": "closingAddress"
+        }, 
+        {
+          "indexed": false, 
+          "type": "uint256", 
+          "name": "blockNumber"
+        }
+      ], 
+      "type": "event", 
+      "name": "ChannelClosed", 
+      "anonymous": false
+    }, 
+    {
+      "inputs": [
+        {
+          "indexed": false, 
+          "type": "uint256", 
+          "name": "blockNumber"
+        }
+      ], 
+      "type": "event", 
+      "name": "ChannelSettled", 
+      "anonymous": false
+    }, 
+    {
+      "inputs": [
+        {
+          "indexed": false, 
+          "type": "bytes32", 
+          "name": "secret"
+        }
+      ], 
+      "type": "event", 
+      "name": "ChannelSecretRevealed", 
+      "anonymous": false
+    }
+  ], 
+  "CHANNELSECRETREVEALED_EVENT": {
+    "inputs": [
+      {
+        "indexed": false, 
+        "type": "bytes32", 
+        "name": "secret"
+      }
+    ], 
+    "type": "event", 
+    "name": "ChannelSecretRevealed", 
+    "anonymous": false
+  }, 
+  "CHANNELCLOSED_EVENTID": 53830991460079036647300999923839236297741644224736748876780851898935721591421, 
+  "HUMAN_TOKEN_ABI": [
+    {
+      "inputs": [], 
+      "constant": true, 
+      "type": "function", 
+      "name": "name", 
+      "outputs": [
+        {
+          "type": "string", 
+          "name": ""
+        }
+      ]
+    }, 
+    {
+      "inputs": [
+        {
+          "type": "address", 
+          "name": "_spender"
+        }, 
+        {
+          "type": "uint256", 
+          "name": "_value"
+        }
+      ], 
+      "constant": false, 
+      "type": "function", 
+      "name": "approve", 
+      "outputs": [
+        {
+          "type": "bool", 
+          "name": "success"
+        }
+      ]
+    }, 
+    {
+      "inputs": [], 
+      "constant": true, 
+      "type": "function", 
+      "name": "totalSupply", 
+      "outputs": [
+        {
+          "type": "uint256", 
+          "name": ""
+        }
+      ]
+    }, 
+    {
+      "inputs": [
+        {
+          "type": "address", 
+          "name": "_from"
+        }, 
+        {
+          "type": "address", 
+          "name": "_to"
+        }, 
+        {
+          "type": "uint256", 
+          "name": "_value"
+        }
+      ], 
+      "constant": false, 
+      "type": "function", 
+      "name": "transferFrom", 
+      "outputs": [
+        {
+          "type": "bool", 
+          "name": "success"
+        }
+      ]
+    }, 
+    {
+      "inputs": [], 
+      "constant": true, 
+      "type": "function", 
+      "name": "decimals", 
+      "outputs": [
+        {
+          "type": "uint8", 
+          "name": ""
+        }
+      ]
+    }, 
+    {
+      "inputs": [], 
+      "constant": true, 
+      "type": "function", 
+      "name": "version", 
+      "outputs": [
+        {
+          "type": "string", 
+          "name": ""
+        }
+      ]
+    }, 
+    {
+      "inputs": [
+        {
+          "type": "address", 
+          "name": "_owner"
+        }
+      ], 
+      "constant": true, 
+      "type": "function", 
+      "name": "balanceOf", 
+      "outputs": [
+        {
+          "type": "uint256", 
+          "name": "balance"
+        }
+      ]
+    }, 
+    {
+      "inputs": [], 
+      "constant": true, 
+      "type": "function", 
+      "name": "symbol", 
+      "outputs": [
+        {
+          "type": "string", 
+          "name": ""
+        }
+      ]
+    }, 
+    {
+      "inputs": [
+        {
+          "type": "address", 
+          "name": "_to"
+        }, 
+        {
+          "type": "uint256", 
+          "name": "_value"
+        }
+      ], 
+      "constant": false, 
+      "type": "function", 
+      "name": "transfer", 
+      "outputs": [
+        {
+          "type": "bool", 
+          "name": "success"
+        }
+      ]
+    }, 
+    {
+      "inputs": [
+        {
+          "type": "address", 
+          "name": "_spender"
+        }, 
+        {
+          "type": "uint256", 
+          "name": "_value"
+        }, 
+        {
+          "type": "bytes", 
+          "name": "_extraData"
+        }
+      ], 
+      "constant": false, 
+      "type": "function", 
+      "name": "approveAndCall", 
+      "outputs": [
+        {
+          "type": "bool", 
+          "name": "success"
+        }
+      ]
+    }, 
+    {
+      "inputs": [
+        {
+          "type": "address", 
+          "name": "_owner"
+        }, 
+        {
+          "type": "address", 
+          "name": "_spender"
+        }
+      ], 
+      "constant": true, 
+      "type": "function", 
+      "name": "allowance", 
+      "outputs": [
+        {
+          "type": "uint256", 
+          "name": "remaining"
+        }
+      ]
+    }, 
+    {
+      "inputs": [
+        {
+          "type": "uint256", 
+          "name": "_initialAmount"
+        }, 
+        {
+          "type": "string", 
+          "name": "_tokenName"
+        }, 
+        {
+          "type": "uint8", 
+          "name": "_decimalUnits"
+        }, 
+        {
+          "type": "string", 
+          "name": "_tokenSymbol"
+        }
+      ], 
+      "type": "constructor"
+    }, 
+    {
+      "inputs": [
+        {
+          "indexed": true, 
+          "type": "address", 
+          "name": "_from"
+        }, 
+        {
+          "indexed": true, 
+          "type": "address", 
+          "name": "_to"
+        }, 
+        {
+          "indexed": false, 
+          "type": "uint256", 
+          "name": "_value"
+        }
+      ], 
+      "type": "event", 
+      "name": "Transfer", 
+      "anonymous": false
+    }, 
+    {
+      "inputs": [
+        {
+          "indexed": true, 
+          "type": "address", 
+          "name": "_owner"
+        }, 
+        {
+          "indexed": true, 
+          "type": "address", 
+          "name": "_spender"
+        }, 
+        {
+          "indexed": false, 
+          "type": "uint256", 
+          "name": "_value"
+        }
+      ], 
+      "type": "event", 
+      "name": "Approval", 
+      "anonymous": false
+    }
+  ], 
+  "CHANNELSETTLED_EVENT": {
+    "inputs": [
+      {
+        "indexed": false, 
+        "type": "uint256", 
+        "name": "blockNumber"
+      }
+    ], 
+    "type": "event", 
+    "name": "ChannelSettled", 
+    "anonymous": false
+  }, 
+  "CHANNELCLOSED_EVENT": {
+    "inputs": [
+      {
+        "indexed": false, 
+        "type": "address", 
+        "name": "closingAddress"
+      }, 
+      {
+        "indexed": false, 
+        "type": "uint256", 
+        "name": "blockNumber"
+      }
+    ], 
+    "type": "event", 
+    "name": "ChannelClosed", 
+    "anonymous": false
+  }, 
+  "CHANNEL_MANAGER_ABI": [
+    {
+      "inputs": [], 
+      "constant": true, 
+      "type": "function", 
+      "name": "getChannelsParticipants", 
+      "outputs": [
+        {
+          "type": "address[]", 
+          "name": "channels"
+        }
+      ]
+    }, 
+    {
+      "inputs": [
+        {
+          "type": "address", 
+          "name": "partner"
+        }
+      ], 
+      "constant": true, 
+      "type": "function", 
+      "name": "getChannelWith", 
+      "outputs": [
+        {
+          "type": "address", 
+          "name": ""
+        }
+      ]
+    }, 
+    {
+      "inputs": [
+        {
+          "type": "address", 
+          "name": "nodeAddress"
+        }
+      ], 
+      "constant": true, 
+      "type": "function", 
+      "name": "getChannelsForNode", 
+      "outputs": [
+        {
+          "type": "address[]", 
+          "name": ""
+        }
+      ]
+    }, 
+    {
+      "inputs": [], 
+      "constant": true, 
+      "type": "function", 
+      "name": "getChannelsAddresses", 
+      "outputs": [
+        {
+          "type": "address[]", 
+          "name": ""
+        }
+      ]
+    }, 
+    {
+      "inputs": [
+        {
+          "type": "address", 
+          "name": "node_address"
+        }
+      ], 
+      "constant": true, 
+      "type": "function", 
+      "name": "nettingContractsByAddress", 
+      "outputs": [
+        {
+          "type": "address[]", 
+          "name": ""
+        }
+      ]
+    }, 
+    {
+      "inputs": [], 
+      "constant": true, 
+      "type": "function", 
+      "name": "tokenAddress", 
+      "outputs": [
+        {
+          "type": "address", 
+          "name": ""
+        }
+      ]
+    }, 
+    {
+      "inputs": [
+        {
+          "type": "address", 
+          "name": "partner"
+        }, 
+        {
+          "type": "uint256", 
+          "name": "settleTimeout"
+        }
+      ], 
+      "constant": false, 
+      "type": "function", 
+      "name": "newChannel", 
+      "outputs": [
+        {
+          "type": "address", 
+          "name": "channel"
+        }
+      ]
+    }, 
+    {
+      "inputs": [
+        {
+          "type": "address", 
+          "name": "tokenAddress"
+        }
+      ], 
+      "type": "constructor"
+    }, 
+    {
+      "inputs": [
+        {
+          "indexed": false, 
+          "type": "address", 
+          "name": "nettingChannel"
+        }, 
+        {
+          "indexed": false, 
+          "type": "address", 
+          "name": "participant1"
+        }, 
+        {
+          "indexed": false, 
+          "type": "address", 
+          "name": "participant2"
+        }, 
+        {
+          "indexed": false, 
+          "type": "uint256", 
+          "name": "settleTimeout"
+        }
+      ], 
+      "type": "event", 
+      "name": "ChannelNew", 
+      "anonymous": false
+    }
+  ], 
+  "human_token_compiled": {
+    "abi": [
+      {
+        "inputs": [], 
+        "constant": true, 
+        "type": "function", 
+        "name": "name", 
+        "outputs": [
+          {
+            "type": "string", 
+            "name": ""
+          }
+        ]
+      }, 
+      {
+        "inputs": [
+          {
+            "type": "address", 
+            "name": "_spender"
+          }, 
+          {
+            "type": "uint256", 
+            "name": "_value"
+          }
+        ], 
+        "constant": false, 
+        "type": "function", 
+        "name": "approve", 
+        "outputs": [
+          {
+            "type": "bool", 
+            "name": "success"
+          }
+        ]
+      }, 
+      {
+        "inputs": [], 
+        "constant": true, 
+        "type": "function", 
+        "name": "totalSupply", 
+        "outputs": [
+          {
+            "type": "uint256", 
+            "name": ""
+          }
+        ]
+      }, 
+      {
+        "inputs": [
+          {
+            "type": "address", 
+            "name": "_from"
+          }, 
+          {
+            "type": "address", 
+            "name": "_to"
+          }, 
+          {
+            "type": "uint256", 
+            "name": "_value"
+          }
+        ], 
+        "constant": false, 
+        "type": "function", 
+        "name": "transferFrom", 
+        "outputs": [
+          {
+            "type": "bool", 
+            "name": "success"
+          }
+        ]
+      }, 
+      {
+        "inputs": [], 
+        "constant": true, 
+        "type": "function", 
+        "name": "decimals", 
+        "outputs": [
+          {
+            "type": "uint8", 
+            "name": ""
+          }
+        ]
+      }, 
+      {
+        "inputs": [], 
+        "constant": true, 
+        "type": "function", 
+        "name": "version", 
+        "outputs": [
+          {
+            "type": "string", 
+            "name": ""
+          }
+        ]
+      }, 
+      {
+        "inputs": [
+          {
+            "type": "address", 
+            "name": "_owner"
+          }
+        ], 
+        "constant": true, 
+        "type": "function", 
+        "name": "balanceOf", 
+        "outputs": [
+          {
+            "type": "uint256", 
+            "name": "balance"
+          }
+        ]
+      }, 
+      {
+        "inputs": [], 
+        "constant": true, 
+        "type": "function", 
+        "name": "symbol", 
+        "outputs": [
+          {
+            "type": "string", 
+            "name": ""
+          }
+        ]
+      }, 
+      {
+        "inputs": [
+          {
+            "type": "address", 
+            "name": "_to"
+          }, 
+          {
+            "type": "uint256", 
+            "name": "_value"
+          }
+        ], 
+        "constant": false, 
+        "type": "function", 
+        "name": "transfer", 
+        "outputs": [
+          {
+            "type": "bool", 
+            "name": "success"
+          }
+        ]
+      }, 
+      {
+        "inputs": [
+          {
+            "type": "address", 
+            "name": "_spender"
+          }, 
+          {
+            "type": "uint256", 
+            "name": "_value"
+          }, 
+          {
+            "type": "bytes", 
+            "name": "_extraData"
+          }
+        ], 
+        "constant": false, 
+        "type": "function", 
+        "name": "approveAndCall", 
+        "outputs": [
+          {
+            "type": "bool", 
+            "name": "success"
+          }
+        ]
+      }, 
+      {
+        "inputs": [
+          {
+            "type": "address", 
+            "name": "_owner"
+          }, 
+          {
+            "type": "address", 
+            "name": "_spender"
+          }
+        ], 
+        "constant": true, 
+        "type": "function", 
+        "name": "allowance", 
+        "outputs": [
+          {
+            "type": "uint256", 
+            "name": "remaining"
+          }
+        ]
+      }, 
+      {
+        "inputs": [
+          {
+            "type": "uint256", 
+            "name": "_initialAmount"
+          }, 
+          {
+            "type": "string", 
+            "name": "_tokenName"
+          }, 
+          {
+            "type": "uint8", 
+            "name": "_decimalUnits"
+          }, 
+          {
+            "type": "string", 
+            "name": "_tokenSymbol"
+          }
+        ], 
+        "type": "constructor"
+      }, 
+      {
+        "inputs": [
+          {
+            "indexed": true, 
+            "type": "address", 
+            "name": "_from"
+          }, 
+          {
+            "indexed": true, 
+            "type": "address", 
+            "name": "_to"
+          }, 
+          {
+            "indexed": false, 
+            "type": "uint256", 
+            "name": "_value"
+          }
+        ], 
+        "type": "event", 
+        "name": "Transfer", 
+        "anonymous": false
+      }, 
+      {
+        "inputs": [
+          {
+            "indexed": true, 
+            "type": "address", 
+            "name": "_owner"
+          }, 
+          {
+            "indexed": true, 
+            "type": "address", 
+            "name": "_spender"
+          }, 
+          {
+            "indexed": false, 
+            "type": "uint256", 
+            "name": "_value"
+          }
+        ], 
+        "type": "event", 
+        "name": "Approval", 
+        "anonymous": false
+      }
+    ]
+  }, 
+  "CHANNELSETTLED_EVENTID": 115029007560900717456735779988726600824707318718433934260904347227772618066841, 
+  "registry_compiled": {
+    "abi": [
+      {
+        "inputs": [
+          {
+            "type": "address", 
+            "name": ""
+          }
+        ], 
+        "constant": true, 
+        "type": "function", 
+        "name": "registry", 
+        "outputs": [
+          {
+            "type": "address", 
+            "name": ""
+          }
+        ]
+      }, 
+      {
+        "inputs": [
+          {
+            "type": "address", 
+            "name": "assetAddress"
+          }
+        ], 
+        "constant": false, 
+        "type": "function", 
+        "name": "addAsset", 
+        "outputs": [
+          {
+            "type": "address", 
+            "name": ""
+          }
+        ]
+      }, 
+      {
+        "inputs": [], 
+        "constant": true, 
+        "type": "function", 
+        "name": "assetAddresses", 
+        "outputs": [
+          {
+            "type": "address[]", 
+            "name": ""
+          }
+        ]
+      }, 
+      {
+        "inputs": [
+          {
+            "type": "address", 
+            "name": "assetAddress"
+          }
+        ], 
+        "constant": true, 
+        "type": "function", 
+        "name": "channelManagerByAsset", 
+        "outputs": [
+          {
+            "type": "address", 
+            "name": ""
+          }
+        ]
+      }, 
+      {
+        "inputs": [], 
+        "constant": true, 
+        "type": "function", 
+        "name": "channelManagerAddresses", 
+        "outputs": [
+          {
+            "type": "address[]", 
+            "name": ""
+          }
+        ]
+      }, 
+      {
+        "inputs": [
+          {
+            "type": "uint256", 
+            "name": ""
+          }
+        ], 
+        "constant": true, 
+        "type": "function", 
+        "name": "assets", 
+        "outputs": [
+          {
+            "type": "address", 
+            "name": ""
+          }
+        ]
+      }, 
+      {
+        "inputs": [
+          {
+            "indexed": false, 
+            "type": "address", 
+            "name": "assetAddress"
+          }, 
+          {
+            "indexed": false, 
+            "type": "address", 
+            "name": "channelManagerAddress"
+          }
+        ], 
+        "type": "event", 
+        "name": "AssetAdded", 
+        "anonymous": false
+      }
+    ]
+  }, 
+  "ASSETADDED_EVENTID": 5296023113266397897475973994688261062745531797251983350205045442345287878936, 
+  "ASSETADDED_EVENT": {
+    "inputs": [
+      {
+        "indexed": false, 
+        "type": "address", 
+        "name": "assetAddress"
+      }, 
+      {
+        "indexed": false, 
+        "type": "address", 
+        "name": "channelManagerAddress"
+      }
+    ], 
+    "type": "event", 
+    "name": "AssetAdded", 
+    "anonymous": false
+  }, 
+  "netting_channel_compiled": {
+    "abi": [
+      {
+        "inputs": [
+          {
+            "type": "bytes", 
+            "name": "lockedEncoded"
+          }, 
+          {
+            "type": "bytes", 
+            "name": "merkleProof"
+          }, 
+          {
+            "type": "bytes32", 
+            "name": "secret"
+          }
+        ], 
+        "constant": false, 
+        "type": "function", 
+        "name": "unlock", 
+        "outputs": []
+      }, 
+      {
+        "inputs": [
+          {
+            "type": "address", 
+            "name": "one_address"
+          }
+        ], 
+        "constant": true, 
+        "type": "function", 
+        "name": "partner", 
+        "outputs": [
+          {
+            "type": "address", 
+            "name": ""
+          }
+        ]
+      }, 
+      {
+        "inputs": [], 
+        "constant": false, 
+        "type": "function", 
+        "name": "settle", 
+        "outputs": []
+      }, 
+      {
+        "inputs": [], 
+        "constant": true, 
+        "type": "function", 
+        "name": "assetAddress", 
+        "outputs": [
+          {
+            "type": "address", 
+            "name": ""
+          }
+        ]
+      }, 
+      {
+        "inputs": [
+          {
+            "type": "bytes", 
+            "name": "signed_transfer"
+          }
+        ], 
+        "constant": false, 
+        "type": "function", 
+        "name": "updateTransfer", 
+        "outputs": []
+      }, 
+      {
+        "inputs": [], 
+        "constant": true, 
+        "type": "function", 
+        "name": "closingAddress", 
+        "outputs": [
+          {
+            "type": "address", 
+            "name": ""
+          }
+        ]
+      }, 
+      {
+        "inputs": [], 
+        "constant": true, 
+        "type": "function", 
+        "name": "closed", 
+        "outputs": [
+          {
+            "type": "uint256", 
+            "name": ""
+          }
+        ]
+      }, 
+      {
+        "inputs": [], 
+        "constant": true, 
+        "type": "function", 
+        "name": "opened", 
+        "outputs": [
+          {
+            "type": "uint256", 
+            "name": ""
+          }
+        ]
+      }, 
+      {
+        "inputs": [], 
+        "constant": true, 
+        "type": "function", 
+        "name": "addressAndBalance", 
+        "outputs": [
+          {
+            "type": "address", 
+            "name": "participant1"
+          }, 
+          {
+            "type": "uint256", 
+            "name": "balance1"
+          }, 
+          {
+            "type": "address", 
+            "name": "participant2"
+          }, 
+          {
+            "type": "uint256", 
+            "name": "balance2"
+          }
+        ]
+      }, 
+      {
+        "inputs": [], 
+        "constant": true, 
+        "type": "function", 
+        "name": "data", 
+        "outputs": [
+          {
+            "type": "uint256", 
+            "name": "settleTimeout"
+          }, 
+          {
+            "type": "uint256", 
+            "name": "opened"
+          }, 
+          {
+            "type": "uint256", 
+            "name": "closed"
+          }, 
+          {
+            "type": "uint256", 
+            "name": "settled"
+          }, 
+          {
+            "type": "address", 
+            "name": "closingAddress"
+          }, 
+          {
+            "type": "address", 
+            "name": "token"
+          }
+        ]
+      }, 
+      {
+        "inputs": [], 
+        "constant": true, 
+        "type": "function", 
+        "name": "settleTimeout", 
+        "outputs": [
+          {
+            "type": "uint256", 
+            "name": ""
+          }
+        ]
+      }, 
+      {
+        "inputs": [
+          {
+            "type": "bytes", 
+            "name": "signed_transfer"
+          }
+        ], 
+        "constant": false, 
+        "type": "function", 
+        "name": "closeSingleTransfer", 
+        "outputs": []
+      }, 
+      {
+        "inputs": [], 
+        "constant": true, 
+        "type": "function", 
+        "name": "settled", 
+        "outputs": [
+          {
+            "type": "uint256", 
+            "name": ""
+          }
+        ]
+      }, 
+      {
+        "inputs": [
+          {
+            "type": "uint256", 
+            "name": "amount"
+          }
+        ], 
+        "constant": false, 
+        "type": "function", 
+        "name": "deposit", 
+        "outputs": [
+          {
+            "type": "bool", 
+            "name": ""
+          }
+        ]
+      }, 
+      {
+        "inputs": [
+          {
+            "type": "bytes", 
+            "name": "firstEncoded"
+          }, 
+          {
+            "type": "bytes", 
+            "name": "secondEncoded"
+          }
+        ], 
+        "constant": false, 
+        "type": "function", 
+        "name": "close", 
+        "outputs": []
+      }, 
+      {
+        "inputs": [
+          {
+            "type": "address", 
+            "name": "assetAddress"
+          }, 
+          {
+            "type": "address", 
+            "name": "participant1"
+          }, 
+          {
+            "type": "address", 
+            "name": "participant2"
+          }, 
+          {
+            "type": "uint256", 
+            "name": "timeout"
+          }
+        ], 
+        "type": "constructor"
+      }, 
+      {
+        "inputs": [
+          {
+            "indexed": false, 
+            "type": "address", 
+            "name": "assetAddress"
+          }, 
+          {
+            "indexed": false, 
+            "type": "address", 
+            "name": "participant"
+          }, 
+          {
+            "indexed": false, 
+            "type": "uint256", 
+            "name": "balance"
+          }, 
+          {
+            "indexed": false, 
+            "type": "uint256", 
+            "name": "blockNumber"
+          }
+        ], 
+        "type": "event", 
+        "name": "ChannelNewBalance", 
+        "anonymous": false
+      }, 
+      {
+        "inputs": [
+          {
+            "indexed": false, 
+            "type": "address", 
+            "name": "closingAddress"
+          }, 
+          {
+            "indexed": false, 
+            "type": "uint256", 
+            "name": "blockNumber"
+          }
+        ], 
+        "type": "event", 
+        "name": "ChannelClosed", 
+        "anonymous": false
+      }, 
+      {
+        "inputs": [
+          {
+            "indexed": false, 
+            "type": "uint256", 
+            "name": "blockNumber"
+          }
+        ], 
+        "type": "event", 
+        "name": "ChannelSettled", 
+        "anonymous": false
+      }, 
+      {
+        "inputs": [
+          {
+            "indexed": false, 
+            "type": "bytes32", 
+            "name": "secret"
+          }
+        ], 
+        "type": "event", 
+        "name": "ChannelSecretRevealed", 
+        "anonymous": false
+      }
+    ]
+  }, 
+  "CHANNELNEWBALANCE_EVENTID": 114766178676167694598440904863050666332653936699116270426216823089877174974525, 
+  "CHANNELSECRETREVEALED_EVENTID": 696083427449000618512826591440299485526660578016786725936576729303869413221, 
+  "channel_manager_compiled": {
+    "abi": [
+      {
+        "inputs": [], 
+        "constant": true, 
+        "type": "function", 
+        "name": "getChannelsParticipants", 
+        "outputs": [
+          {
+            "type": "address[]", 
+            "name": "channels"
+          }
+        ]
+      }, 
+      {
+        "inputs": [
+          {
+            "type": "address", 
+            "name": "partner"
+          }
+        ], 
+        "constant": true, 
+        "type": "function", 
+        "name": "getChannelWith", 
+        "outputs": [
+          {
+            "type": "address", 
+            "name": ""
+          }
+        ]
+      }, 
+      {
+        "inputs": [
+          {
+            "type": "address", 
+            "name": "nodeAddress"
+          }
+        ], 
+        "constant": true, 
+        "type": "function", 
+        "name": "getChannelsForNode", 
+        "outputs": [
+          {
+            "type": "address[]", 
+            "name": ""
+          }
+        ]
+      }, 
+      {
+        "inputs": [], 
+        "constant": true, 
+        "type": "function", 
+        "name": "getChannelsAddresses", 
+        "outputs": [
+          {
+            "type": "address[]", 
+            "name": ""
+          }
+        ]
+      }, 
+      {
+        "inputs": [
+          {
+            "type": "address", 
+            "name": "node_address"
+          }
+        ], 
+        "constant": true, 
+        "type": "function", 
+        "name": "nettingContractsByAddress", 
+        "outputs": [
+          {
+            "type": "address[]", 
+            "name": ""
+          }
+        ]
+      }, 
+      {
+        "inputs": [], 
+        "constant": true, 
+        "type": "function", 
+        "name": "tokenAddress", 
+        "outputs": [
+          {
+            "type": "address", 
+            "name": ""
+          }
+        ]
+      }, 
+      {
+        "inputs": [
+          {
+            "type": "address", 
+            "name": "partner"
+          }, 
+          {
+            "type": "uint256", 
+            "name": "settleTimeout"
+          }
+        ], 
+        "constant": false, 
+        "type": "function", 
+        "name": "newChannel", 
+        "outputs": [
+          {
+            "type": "address", 
+            "name": "channel"
+          }
+        ]
+      }, 
+      {
+        "inputs": [
+          {
+            "type": "address", 
+            "name": "tokenAddress"
+          }
+        ], 
+        "type": "constructor"
+      }, 
+      {
+        "inputs": [
+          {
+            "indexed": false, 
+            "type": "address", 
+            "name": "nettingChannel"
+          }, 
+          {
+            "indexed": false, 
+            "type": "address", 
+            "name": "participant1"
+          }, 
+          {
+            "indexed": false, 
+            "type": "address", 
+            "name": "participant2"
+          }, 
+          {
+            "indexed": false, 
+            "type": "uint256", 
+            "name": "settleTimeout"
+          }
+        ], 
+        "type": "event", 
+        "name": "ChannelNew", 
+        "anonymous": false
+      }
+    ]
+  }, 
+  "CHANNELNEW_EVENT": {
+    "inputs": [
+      {
+        "indexed": false, 
+        "type": "address", 
+        "name": "nettingChannel"
+      }, 
+      {
+        "indexed": false, 
+        "type": "address", 
+        "name": "participant1"
+      }, 
+      {
+        "indexed": false, 
+        "type": "address", 
+        "name": "participant2"
+      }, 
+      {
+        "indexed": false, 
+        "type": "uint256", 
+        "name": "settleTimeout"
+      }
+    ], 
+    "type": "event", 
+    "name": "ChannelNew", 
+    "anonymous": false
+  }, 
+  "CHANNELNEWBALANCE_EVENT": {
+    "inputs": [
+      {
+        "indexed": false, 
+        "type": "address", 
+        "name": "assetAddress"
+      }, 
+      {
+        "indexed": false, 
+        "type": "address", 
+        "name": "participant"
+      }, 
+      {
+        "indexed": false, 
+        "type": "uint256", 
+        "name": "balance"
+      }, 
+      {
+        "indexed": false, 
+        "type": "uint256", 
+        "name": "blockNumber"
+      }
+    ], 
+    "type": "event", 
+    "name": "ChannelNewBalance", 
+    "anonymous": false
+  }, 
+  "REGISTRY_ABI": [
+    {
+      "inputs": [
+        {
+          "type": "address", 
+          "name": ""
+        }
+      ], 
+      "constant": true, 
+      "type": "function", 
+      "name": "registry", 
+      "outputs": [
+        {
+          "type": "address", 
+          "name": ""
+        }
+      ]
+    }, 
+    {
+      "inputs": [
+        {
+          "type": "address", 
+          "name": "assetAddress"
+        }
+      ], 
+      "constant": false, 
+      "type": "function", 
+      "name": "addAsset", 
+      "outputs": [
+        {
+          "type": "address", 
+          "name": ""
+        }
+      ]
+    }, 
+    {
+      "inputs": [], 
+      "constant": true, 
+      "type": "function", 
+      "name": "assetAddresses", 
+      "outputs": [
+        {
+          "type": "address[]", 
+          "name": ""
+        }
+      ]
+    }, 
+    {
+      "inputs": [
+        {
+          "type": "address", 
+          "name": "assetAddress"
+        }
+      ], 
+      "constant": true, 
+      "type": "function", 
+      "name": "channelManagerByAsset", 
+      "outputs": [
+        {
+          "type": "address", 
+          "name": ""
+        }
+      ]
+    }, 
+    {
+      "inputs": [], 
+      "constant": true, 
+      "type": "function", 
+      "name": "channelManagerAddresses", 
+      "outputs": [
+        {
+          "type": "address[]", 
+          "name": ""
+        }
+      ]
+    }, 
+    {
+      "inputs": [
+        {
+          "type": "uint256", 
+          "name": ""
+        }
+      ], 
+      "constant": true, 
+      "type": "function", 
+      "name": "assets", 
+      "outputs": [
+        {
+          "type": "address", 
+          "name": ""
+        }
+      ]
+    }, 
+    {
+      "inputs": [
+        {
+          "indexed": false, 
+          "type": "address", 
+          "name": "assetAddress"
+        }, 
+        {
+          "indexed": false, 
+          "type": "address", 
+          "name": "channelManagerAddress"
+        }
+      ], 
+      "type": "event", 
+      "name": "AssetAdded", 
+      "anonymous": false
+    }
+  ], 
+  "CHANNELNEW_EVENTID": 56006245784690129154524024918238707312335198069599054175378860271285371887020
+}

@@ -1,0 +1,134 @@
+{
+  "discovery_contract_compiled": {
+    "abi": [
+      {
+        "inputs": [
+          {
+            "type": "address", 
+            "name": "eth_address"
+          }
+        ], 
+        "constant": true, 
+        "type": "function", 
+        "name": "findEndpointByAddress", 
+        "outputs": [
+          {
+            "type": "string", 
+            "name": "socket"
+          }
+        ]
+      }, 
+      {
+        "inputs": [
+          {
+            "type": "string", 
+            "name": "socket"
+          }
+        ], 
+        "constant": false, 
+        "type": "function", 
+        "name": "registerEndpoint", 
+        "outputs": []
+      }, 
+      {
+        "inputs": [
+          {
+            "type": "string", 
+            "name": "socket"
+          }
+        ], 
+        "constant": true, 
+        "type": "function", 
+        "name": "findAddressByEndpoint", 
+        "outputs": [
+          {
+            "type": "address", 
+            "name": "eth_address"
+          }
+        ]
+      }, 
+      {
+        "inputs": [
+          {
+            "indexed": true, 
+            "type": "address", 
+            "name": "eth_address"
+          }, 
+          {
+            "indexed": false, 
+            "type": "string", 
+            "name": "socket"
+          }
+        ], 
+        "type": "event", 
+        "name": "AddressRegistered", 
+        "anonymous": false
+      }
+    ]
+  }, 
+  "DISCOVERY_CONTRACT_ABI": [
+    {
+      "inputs": [
+        {
+          "type": "address", 
+          "name": "eth_address"
+        }
+      ], 
+      "constant": true, 
+      "type": "function", 
+      "name": "findEndpointByAddress", 
+      "outputs": [
+        {
+          "type": "string", 
+          "name": "socket"
+        }
+      ]
+    }, 
+    {
+      "inputs": [
+        {
+          "type": "string", 
+          "name": "socket"
+        }
+      ], 
+      "constant": false, 
+      "type": "function", 
+      "name": "registerEndpoint", 
+      "outputs": []
+    }, 
+    {
+      "inputs": [
+        {
+          "type": "string", 
+          "name": "socket"
+        }
+      ], 
+      "constant": true, 
+      "type": "function", 
+      "name": "findAddressByEndpoint", 
+      "outputs": [
+        {
+          "type": "address", 
+          "name": "eth_address"
+        }
+      ]
+    }, 
+    {
+      "inputs": [
+        {
+          "indexed": true, 
+          "type": "address", 
+          "name": "eth_address"
+        }, 
+        {
+          "indexed": false, 
+          "type": "string", 
+          "name": "socket"
+        }
+      ], 
+      "type": "event", 
+      "name": "AddressRegistered", 
+      "anonymous": false
+    }
+  ]
+}

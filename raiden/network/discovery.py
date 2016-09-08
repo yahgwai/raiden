@@ -1,21 +1,17 @@
 # -*- coding: utf8 -*-
-from ethereum import _solidity
-
 from raiden.utils import (
     host_port_to_endpoint,
     isaddress,
     pex,
     split_endpoint,
 )
-from raiden.blockchain.abi import get_contract_path
 from raiden.network.rpc.client import DEFAULT_POLL_TIMEOUT
 
-discovery_contract_compiled = _solidity.compile_contract(
-    get_contract_path('EndpointRegistry.sol'),
-    'EndpointRegistry',
-    combined='abi',
+__all__ = (
+    'Discovery',
+    'ContractDiscovery',
+    'DISCOVERY_CONTRACT_ABI',
 )
-DISCOVERY_CONTRACT_ABI = discovery_contract_compiled['abi']
 
 
 class Discovery(object):

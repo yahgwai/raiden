@@ -2,14 +2,12 @@
 import gevent
 import rlp
 from ethereum import slogging
-from ethereum import _solidity
 from ethereum.transactions import Transaction
 from ethereum.utils import denoms, int_to_big_endian, encode_hex, normalize_address
 from pyethapp.jsonrpc import address_encoder, address_decoder, data_decoder
 from pyethapp.rpc_client import topic_encoder, JSONRPCClient
 
 from raiden import messages
-from raiden.blockchain.abi import get_contract_path
 from raiden.utils import pex, isaddress, privatekey_to_address
 from raiden.blockchain.abi import (
     HUMAN_TOKEN_ABI,
@@ -32,8 +30,6 @@ GAS_LIMIT_HEX = '0x' + int_to_big_endian(GAS_LIMIT).encode('hex')
 GAS_PRICE = denoms.shannon * 20
 
 DEFAULT_POLL_TIMEOUT = 60
-
-solidity = _solidity.get_solidity()  # pylint: disable=invalid-name
 
 # Coding standard for this module:
 #
@@ -205,32 +201,10 @@ class BlockChainService(object):
         self.client.call('eth_uninstallFilter', filter_id_raw)
 
     def deploy_contract(self, contract_name, contract_file, constructor_parameters=None):
-        contract_path = get_contract_path(contract_file)
-        contracts = _solidity.compile_file(contract_path, libraries=dict())
-
-        log.info('Deploying "{}" contract'.format(contract_file))
-
-        proxy = self.client.deploy_solidity_contract(
-            self.node_address,
-            contract_name,
-            contracts,
-            dict(),
-            constructor_parameters,
-            timeout=self.poll_timeout,
-        )
-        return proxy.address
+        pass
 
     def deploy_and_register_asset(self, contract_name, contract_file, constructor_parameters=None):
-        assert self.default_registry
-
-        token_address = self.deploy_contract(
-            contract_name,
-            contract_file,
-            constructor_parameters,
-        )
-        self.default_registry.add_asset(token_address)  # pylint: disable=no-member
-
-        return token_address
+        pass
 
 
 class Filter(object):
