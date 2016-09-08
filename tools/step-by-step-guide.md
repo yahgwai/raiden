@@ -49,6 +49,6 @@ Now $CONFIG_DIR contains several files:
 - `geth/geth_commands.json` contains the command to start the geth node. After you run this, both raiden nodes can
   communicate with the network using:
 
-    --rpc_endpoint "192.168.0.73:8545"
-
-and the other `raiden_flags` from $CONFIG_DIR/genesis.json:config['raidenFlags']
+    - `--rpc_endpoint "192.168.0.73:8545"`
+    - `raiden_flags` from `$CONFIG_DIR/geth/genesis.json:config['raidenFlags']`
+    - `--privatekey` from  `$CONFIG_DIR/raiden_accounts.json`
