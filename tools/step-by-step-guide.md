@@ -46,8 +46,13 @@ Now $CONFIG_DIR contains several files:
 - `raiden_accounts.json`: privatekeys to use for the two nodes on both machines
 
 - `geth`-directory: move this to your geth node to the folder $GETH_DATADIR
-- `geth/geth_commands.json` contains the command to start the geth node. After you run this, both raiden nodes can
-  communicate with the network using:
+- `geth/geth_commands.json` contains the command to start the geth node. Before you run this, you need to call:
+
+        - `geth --datadir $GETH_DATADIR init $GETH_DATADIR/genesis.json`
+
+    (make sure, you defined $GETH_DATADIR on the machine, or spell it out completely).
+
+- After you did the above, both raiden nodes can communicate with the network using:
 
     - `--rpc_endpoint "192.168.0.73:8545"`
     - `raiden_flags` from `$CONFIG_DIR/geth/genesis.json:config['raidenFlags']`
