@@ -258,7 +258,7 @@ class Asset(object):
         )
 
         if result == '0x':
-            raise ValueError('Address given for asset {} does not contain code'.format(
+            raise ValueError('Asset address {} does not contain code'.format(
                 address_encoder(asset_address),
             ))
 
@@ -313,7 +313,7 @@ class Registry(object):
         )
 
         if result == '0x':
-            raise ValueError('Asset address {} does not contain code'.format(
+            raise ValueError('Registry address {} does not contain code'.format(
                 address_encoder(registry_address),
             ))
 
@@ -511,7 +511,7 @@ class NettingChannel(object):
         )
 
         if result == '0x':
-            raise ValueError('Address given for netting channel {} does not contain code'.format(
+            raise ValueError('Netting channel address {} does not contain code'.format(
                 address_encoder(channel_address),
             ))
 
