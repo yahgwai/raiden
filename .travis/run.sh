@@ -9,7 +9,7 @@ elif [ -z ${BLOCKCHAIN_TYPE} ]; then
     BLOCKCHAIN_TYPE="geth"
 fi
 
-py.test \
+coverage run -m pytest \
     -Wd \
     --travis-fold=always \
     --log-config='raiden:DEBUG' \
