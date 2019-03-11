@@ -231,6 +231,11 @@ class Scenario(Mapping):
         return self.settings.get('chain', 'any')
 
     @property
+    def services(self):
+        """ Return the """
+        return self.settings.get('services', {})
+
+    @property
     def gas_price(self) -> str:
         """Return the configured gas price for this scenario.
 
