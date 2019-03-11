@@ -1,29 +1,19 @@
 import pathlib
 from collections.abc import Mapping
-from typing import Dict, List, Tuple, Any, Union
+from typing import Any, Dict, List, Tuple, Union
 
 import structlog
 import yaml
+
+from scenario_player.constants import SUPPORTED_SCENARIO_VERSIONS, TIMEOUT, NodeMode
 from scenario_player.exceptions import (
-    ScenarioError,
+    InvalidScenarioVersion,
     MissingNodesConfiguration,
     MultipleTaskDefinitions,
-    InvalidScenarioVersion,
+    ScenarioError,
 )
-from scenario_player.constants import (
-    DEFAULT_TOKEN_BALANCE_MIN,
-    DEFAULT_TOKEN_BALANCE_FUND,
-    OWN_ACCOUNT_BALANCE_MIN,
-    NODE_ACCOUNT_BALANCE_MIN,
-    NODE_ACCOUNT_BALANCE_FUND,
-    TIMEOUT,
-    API_URL_ADDRESS,
-    API_URL_TOKENS,
-    API_URL_TOKEN_NETWORK_ADDRESS,
-    SUPPORTED_SCENARIO_VERSIONS,
-)
-from scenario_player.tasks.base import get_task_class_for_type
-from scenario_player.utils import get_gas_prize_strategy
+from scenario_player.utils import get_gas_price_strategy
+
 log = structlog.get_logger(__name__)
 
 
@@ -57,7 +47,7 @@ class NodesConfig(Mapping):
                 mode = self._config['mode'].upper()
             except KeyError:
                 raise MissingNodesConfiguration(
-                    'Version 2 scenarios require a "mode" in the "nodes" section.'
+                    'Version 2 scenarios require a "mode" in the "nodes" section.',
                 )
             try:
                 return NodeMode[mode]
@@ -114,14 +104,14 @@ class NodesConfig(Mapping):
             except KeyError:
                 raise MissingNodesConfiguration(
                     'Setting "range" must be a dict containing keys "first" and "last",'
-                    ' whose values are integers!'
+                    ' whose values are integers!',
                 )
 
             try:
                 template = range_config['template']
             except KeyError:
                 raise MissingNodesConfiguration(
-                    'Must specify "template" setting when giving "range" setting.'
+                    'Must specify "template" setting when giving "range" setting.',
                 )
 
             return [template.format(i) for i in range(start, stop)]
@@ -252,7 +242,7 @@ class Scenario(Mapping):
 
     @property
     def gas_price_strategy(self):
-        return get_gas_prize_strategy(self.gas_price)
+        return get_gas_price_strategy(self.gas_price)
 
     @property
     def nodes(self) -> NodesConfig:
@@ -273,7 +263,7 @@ class Scenario(Mapping):
             return self._config['scenario']
         except KeyError:
             raise ScenarioError(
-                "Invalid scenario definition. Missing 'scenario' key."
+                "Invalid scenario definition. Missing 'scenario' key.",
             )
 
     @property
@@ -288,7 +278,7 @@ class Scenario(Mapping):
             items, = self.configuration.items()
         except ValueError:
             raise MultipleTaskDefinitions(
-                'Multiple tasks defined in scenario configuration!'
+                'Multiple tasks defined in scenario configuration!',
             )
         return items
 
@@ -307,6 +297,8 @@ class Scenario(Mapping):
 
         :rtype: Type[]
         """
+        from scenario_player.tasks.base import get_task_class_for_type
+
         root_task_type, root_task_config = self.task
 
         task_class = get_task_class_for_type(root_task_type)
