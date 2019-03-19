@@ -408,6 +408,9 @@ class JSONRPCClient:
             raise EthNodeCommunicationError('couldnt reach the ethereum node')
 
         _, eth_node = is_supported_client(version)
+        # the eth_node returned here is always geth
+        # we force raiden to believe it's using infura since we dont want it to make geth/parity specific calls to ganache
+        uses_infura = True
 
         address = privatekey_to_address(privkey)
         address_checksumed = to_checksum_address(address)

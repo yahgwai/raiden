@@ -75,6 +75,7 @@ def is_minified_address(addr):
 def is_supported_client(
         client_version: str,
 ) -> typing.Tuple[bool, typing.Optional[constants.EthClient]]:
+    return True, constants.EthClient.GETH
     if client_version.startswith('Parity'):
         matches = re.search(r'//v(\d+)\.(\d+)\.(\d+)', client_version)
         if matches is None:
